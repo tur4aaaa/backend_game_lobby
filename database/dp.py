@@ -7,7 +7,7 @@ def get_connection():
         database="game_db",
         user="postgres",
         password="turgay2727",
-        port=5432,
+        DB_PORT = 5432,
     )
     return conn
 
@@ -29,8 +29,13 @@ def create_player(name):
     conn = get_connection()
     cur = conn.cursor()
 
+    query = (
+        "INSERT INTO Players (name, player_state, statistic) "
+        "VALUES (%s, %s, %s)"
+    )
+
     cur.execute(
-        "INSERT INTO Players (name, player_state, statistic) VALUES (%s, %s, %s)",
+        query,
         (name, "offline", "{}"),
     )
 
