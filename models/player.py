@@ -1,5 +1,5 @@
 from models.team import Team
-
+import logging
 
 class Player:
 
@@ -24,13 +24,13 @@ class Player:
     def change_status(self, status):
         if status in ["online", "offline", "ready", "damaged"]:
             self.status = status
-            print(f"{self.name} status changed to {self.status}")
+            logging.info(f"{self.name} status changed to {self.status}")
 
     def get_info(self):
-        result = {
+        score_result = {
             "name": self.name,
             "status": self.status,
             "score": self.score,
             "team": self.team.team_name if self.team is not None else None,
         }
-        return result
+        return score_result
