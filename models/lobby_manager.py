@@ -1,5 +1,6 @@
 import asyncio
 import random
+import logging
 
 from models.team import Team
 
@@ -25,15 +26,16 @@ class LobbyManager:
         random.shuffle(self.players)
         self.teams = []
         team_number = 1
-        i = 0
-        while i < len(self.players):
-            team_players = self.players[i : i + team_size]
-            # Взяли игроков для одной команды
+        for i in range(0, len(self.players), team_size):
+            team_players = self.players[i:i + team_size]
 
-            team = Team(team_name=f"Team {team_number}", players=team_players, score=0)
+            team = Team(
+                team_name=f"Team {team_number}",
+                players=team_players,
+                score=0,
+            )
             self.teams.append(team)
 
-            i += team_size
             team_number += 1
 
     def all_ready(self):
@@ -44,18 +46,18 @@ class LobbyManager:
 
     async def start_game(self):
         if self.game_started:
-            print("Game is on process")
+            logging.info("Game is on process")
             return
 
         check_game_status = self.all_ready()
         if not check_game_status:
-            print("Someone from players is not ready yet")
+            logging.info("Someone from players is not ready yet")
             return
 
         self.form_teams()
 
         self.game_started = True
-        print("Game started")
+        logging.info("Game started")
 
         asyncio.create_task(self.game_tick())
 
