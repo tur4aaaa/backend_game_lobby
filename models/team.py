@@ -9,7 +9,7 @@ class Team:
         damaged_players = []
         active_players = []
         for player in self.players:
-            if player.status == "Damaged":
+            if player.status == "damaged":
                 damaged_players.append(player)
             else:
                 active_players.append(player)
