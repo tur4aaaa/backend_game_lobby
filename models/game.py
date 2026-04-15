@@ -1,5 +1,5 @@
 import asyncio
-
+import logging
 from models.team import Team
 
 
@@ -20,11 +20,11 @@ class Game:
 
     async def start(self):
         if self.game_running:
-            print("Game already running")
+            logging.info("Game started")
             return
 
         self.game_running = True
-        print("Game started")
+        logging.info("Game started")
 
         asyncio.create_task(self.game_loop)
 
@@ -65,7 +65,7 @@ class Game:
     async def stop(self):
         if self.game_running:
             self.game_running = False
-            print("Game stopped")
+            logging.info("Game started")
             self.check_winner()
         else:
-            print("Game is already stopped")
+            logging.info("Game started")
