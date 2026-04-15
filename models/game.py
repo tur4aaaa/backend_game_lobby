@@ -68,4 +68,4 @@ class Game:
             logging.info("Game started")
             self.check_winner()
         else:
-            logging.info("Game started")
+            logging.info("Game is already stopped")
