@@ -1,8 +1,9 @@
+import logging
 from database.dp import create_player, get_player
 
 
 def main():
-    print("Game is started")
+    logging.info("Game is started")
 
     create_player("alex")
 
