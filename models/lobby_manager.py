@@ -1,7 +1,6 @@
 import asyncio
 import random
 
-from player import Player
 from team import Team
 
 
