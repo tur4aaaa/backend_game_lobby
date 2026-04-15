@@ -1,7 +1,7 @@
 import asyncio
 import random
 
-from team import Team
+from models.team import Team
 
 
 class LobbyManager:

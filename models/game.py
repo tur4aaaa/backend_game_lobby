@@ -1,6 +1,6 @@
 import asyncio
 
-from team import Team
+from models.team import Team
 
 
 class Game:
