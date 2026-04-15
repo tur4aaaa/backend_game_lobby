@@ -3,7 +3,13 @@ from models.player import Player
 from models.team import Team
 from models.lobby_manager import LobbyManager
 
-Game
-Player
-Team
-LobbyManager
+def _vulture_keep():
+    objects = [
+        Game,
+        Player,
+        Team,
+        LobbyManager,
+    ]
+    return objects
+
+_vulture_keep()
