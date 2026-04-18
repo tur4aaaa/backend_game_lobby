@@ -40,7 +40,7 @@ Database connection logic is located in `src/database/`.
 
 1. Install dependencies:
 ```bash `
-pip install -r requirements.txt
+poetry install -r requirements.txt
 Configure PostgreSQL database
 Run the application:
 python src/main.py
