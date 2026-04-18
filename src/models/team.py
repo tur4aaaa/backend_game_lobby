@@ -1,6 +1,6 @@
 class Team:
 
-    def __init__(self, team_name, players, score):
+    def __init__(self, team_name:str, players, score:int):
         self.team_name = team_name
         self.players = players
         self.score = score

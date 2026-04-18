@@ -3,7 +3,7 @@ import logging
 
 class Player:
 
-    def __init__(self, name, score, status, team):
+    def __init__(self, name:str, score:int, status:str, team):
         self.name = name
         self.score = score
         self.status = status
