@@ -67,7 +67,7 @@ class LobbyManager:
                 team.update_score()
             for team in self.teams:
                 damaged, active = team.player_status()
-                print(
+                logging.info(
                     f"{team.team_name}: active = {len(active)},damaged = {len(damaged)}"
                 )
 

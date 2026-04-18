@@ -34,7 +34,7 @@ class Game:
             self.process_actions()
             self.current_tick += 1
 
-            print(f"tick: {self.current_tick}")
+            logging.info(f"tick: {self.current_tick}")
 
             if self.current_tick >= self.max_ticks:
                 await self.stop()
@@ -59,7 +59,7 @@ class Game:
             if team.score > biggest_score.score:
                 biggest_score = team
 
-        print(f"This team has the biggest score :{biggest_score}")
+        logging.info(f"This team has the biggest score :{biggest_score}")
         return biggest_score
 
     async def stop(self):
