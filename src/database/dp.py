@@ -4,11 +4,11 @@ import psycopg2
 def get_connection():
     conn = psycopg2.connect(
         host="localhost",
-        database="game_db",
-        user="postgres",
-        password="turgay2727",
-        DB_PORT = 5432,
-    )
+        port=5432,
+        database="your_db_name",
+        user="your_user",
+        password="your_password"
+)
     return conn
 
 

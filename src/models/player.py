@@ -1,4 +1,4 @@
-from models.team import Team
+from src.models.team import Team
 import logging
 
 class Player:

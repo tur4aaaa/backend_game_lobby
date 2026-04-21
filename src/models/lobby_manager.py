@@ -2,7 +2,7 @@ import asyncio
 import random
 import logging
 
-from models.team import Team
+from src.models.team import Team
 
 
 class LobbyManager:
@@ -13,7 +13,6 @@ class LobbyManager:
         self.game_started = False
 
     def add_player(self, player):
-        # Добавляет игрока если он не в лобби
         if player not in self.players:
             self.players.append(player)
 
