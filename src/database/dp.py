@@ -8,7 +8,7 @@ def get_connection():
         database="your_db_name",
         user="your_user",
         password="your_password"
-)
+    )
     return conn
 
 
