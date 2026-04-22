@@ -11,6 +11,7 @@ The project is written in Python and uses PostgreSQL as the database.
 - Python
 - PostgreSQL
 - Git / GitHub
+- JWT (JSON Web Tokens) for authentication
 
 ---
 
